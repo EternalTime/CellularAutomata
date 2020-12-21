@@ -10,7 +10,7 @@ classdef ECA < handle
     %          myECA.rule = newRule
     %          myECA.state = newState
     %    The EVOLVE method updates the ECA one time step, whereas the PLAY
-    %    method evolves the EVA and displays it until the user presses a key.
+    %    method evolves the ECA and displays it until the user presses a key.
     %
     %    Questions or comments? DRSowinski@gmail.com
     %

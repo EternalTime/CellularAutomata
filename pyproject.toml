@@ -24,6 +24,7 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/EternalTime/CellularAutomata"
+Documentation = "https://damiansowinski.com/pyCA/"
 
 [tool.setuptools.packages.find]
 include = ["pyCA*"]

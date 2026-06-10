@@ -17,10 +17,15 @@ ca2d
 measures
     Block entropy, entropy rate, and mutual information for CA histories.
 """
+def docs():
+    """Open the online pyCA documentation in a web browser."""
+    import webbrowser
+    webbrowser.open('https://damiansowinski.com/pyCA/')
+
 from pyCA.eca import ECA
 from pyCA.ica import ICA
 from pyCA.stochastic import NoisyECA, AsyncECA
 from pyCA.ca2d import CA2D
 from pyCA import measures
 
-__all__ = ['ECA', 'ICA', 'NoisyECA', 'AsyncECA', 'CA2D', 'measures']
+__all__ = ['ECA', 'ICA', 'NoisyECA', 'AsyncECA', 'CA2D', 'measures', 'docs']

@@ -50,8 +50,9 @@ lazy = AsyncECA(30, update_fraction=0.7, N=256)
 
 ## Documentation
 
-Sphinx documentation lives in `docs/`; build with `make -C docs html`. The
-guides walk through each family and the information measures.
+The documentation is hosted at [damiansowinski.com/pyCA](https://damiansowinski.com/pyCA/)
+(or run `import pyCA; pyCA.docs()` to open it); the guides walk through each
+family and the information measures. To build locally: `make -C docs html`.
 
 ## Tests
 

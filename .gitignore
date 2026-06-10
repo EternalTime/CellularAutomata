@@ -1,0 +1,20 @@
+# Byte-compiled / cached
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Sphinx
+docs/_build/
+
+# Environments
+.venv/
+
+# OS
+.DS_Store
+
+# MATLAB
+*.asv

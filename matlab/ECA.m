@@ -39,11 +39,11 @@ classdef ECA < handle
         function obj = ECA(rule,state)
             narginchk(0,2) %check for correct number of inputs
             if nargin == 0
-		disp('Initializing with random rule and state')
-		obj.rule = randi([0,255],1)
-		obj.state = randi([0,1],[1,32])
-	    end
-	    obj.state = state;
+                disp('Initializing with random rule and state')
+                rule  = randi([0,255],1);
+                state = randi([0,1],[1,32]);
+            end
+            obj.state = state;
             obj.rule = rule;
             
             obj.N = length(state);

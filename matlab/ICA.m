@@ -1,9 +1,9 @@
 classdef ICA < ECA
 	%------------------------------------------------------------------------
-	%    A 1-dimensional ising cellular automata(ECA), incorporating both 
+	%    A 1-dimensional ising cellular automata(ICA), incorporating both 
 	%    stochastic and deterministic evolution
 	% 
-	%    Create an ECA:
+	%    Create an ICA:
 	%          myICA = ICA(RULE,STATE,TEMPERATURE,STOCHASTIC_FRACTION)
 	%    The RULE needs to be an integer, 0-255, and the STATE must be a row
 	%    vector of 0s and 1s. The TEMPERATURE must be a nonnegative real 

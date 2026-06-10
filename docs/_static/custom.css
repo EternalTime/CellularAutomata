@@ -1,0 +1,19 @@
+/* pyCA color scheme: Berkeley Blue with California Gold accents.
+   Overrides the sphinx_rtd_theme defaults (#2980B9 blue). */
+
+.wy-side-nav-search,
+.wy-nav-top {
+    background: #003262;
+}
+
+.wy-side-nav-search input[type=text] {
+    border-color: #FDB515;
+}
+
+.wy-nav-side {
+    background: #07223f;
+}
+
+.wy-menu-vertical p.caption {
+    color: #FDB515;
+}

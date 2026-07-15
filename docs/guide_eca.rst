@@ -5,7 +5,8 @@ An elementary cellular automaton is a row of cells, each 0 or 1, each
 updating simultaneously from its own value and its two nearest neighbors'.
 That is the entire specification — three binary inputs, one binary output —
 yet the 256 possible update tables exhaust an astonishing range of behavior.
-Stephen Wolfram's numbering scheme names each table by a single byte: bit
+Stephen Wolfram's numbering scheme\ :footcite:`wolfram1983` names each
+table by a single byte: bit
 :math:`n` of the rule number is the output for the neighborhood whose
 (left, center, right) values, read as a binary number, equal :math:`n`.
 Rule 90, for instance, is 01011010 in binary — work through the eight
@@ -35,14 +36,15 @@ meet themselves coming around.
 The four classes
 ^^^^^^^^^^^^^^^^
 
-Wolfram's classification sorts the rules by what they do to almost any
+Wolfram's classification\ :footcite:`wolfram1984` sorts the rules by what
+they do to almost any
 initial condition. Class I rules freeze into uniformity (rule 0, rule 255).
 Class II rules settle into stripes or simple periodic textures (rule 204,
 the identity, is the laziest member). Class III rules churn out apparent
 randomness forever — rule 30 is the archetype. Class IV rules live on the
 boundary, supporting localized structures that move and collide — rule 110,
-famously, is Turing complete: Matthew Cook proved in the 1990s that those
-colliding gliders can simulate any computation.
+famously, is Turing complete: Matthew Cook proved\ :footcite:`cook2004` in
+the 1990s that those colliding gliders can simulate any computation.
 
 Survey them yourself::
 
@@ -64,3 +66,8 @@ their known classes — the boundaries are blurrier than the taxonomy
 suggests, and deciding where a rule belongs is a better teacher than being
 told. Then come back with :doc:`guide_measures` and classify them by number
 instead.
+
+References
+^^^^^^^^^^
+
+.. footbibliography::

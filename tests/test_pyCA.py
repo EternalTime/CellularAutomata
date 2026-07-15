@@ -198,3 +198,38 @@ def test_mutual_information_limits():
     mi = measures.mutual_information(data, 1)
     h1 = measures.block_entropy(data, 1)
     assert abs(mi - h1) < 1e-12
+
+def test_lz_complexity_matches_kaspar_schuster_example():
+    #the worked example of Kaspar & Schuster (1987): six phrases,
+    #0 | 001 | 10 | 100 | 1000 | 101
+    s = np.array([0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1])
+    n = s.size
+    assert abs(measures.lz_complexity(s) - 6*np.log2(n)/n) < 1e-12
+
+def test_lz_complexity_matches_brute_force_parse():
+    def naive_phrases(bits):
+        s = ''.join(str(int(b)) for b in bits)
+        n = len(s)
+        p, c = 0, 0
+        while p < n:
+            q = p + 1
+            while q <= n and s[p:q] in s[:q - 1]:
+                q += 1
+            c += 1
+            p = q
+        return c
+
+    rng = np.random.default_rng(14)
+    for _ in range(100):
+        n = int(rng.integers(2, 80))
+        s = rng.integers(0, 2, n)
+        expected = naive_phrases(s)*np.log2(n)/n
+        assert abs(measures.lz_complexity(s) - expected) < 1e-12
+
+def test_lz_complexity_limits():
+    rng = np.random.default_rng(15)
+    #a frozen row parses into two phrases; normalized, nearly zero
+    assert measures.lz_complexity(np.zeros(1000, dtype=int)) < 0.05
+    #fair coins approach 1, slowly and from above
+    coins = rng.integers(0, 2, (20, 1000))
+    assert 0.9 < measures.lz_complexity(coins) < 1.3

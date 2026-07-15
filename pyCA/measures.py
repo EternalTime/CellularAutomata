@@ -101,6 +101,50 @@ def mutual_information(data, distance=1):
                 info += joint[a, b]*np.log2(joint[a, b]/(px[a]*py[b]))
     return float(max(info, 0.0))
 
+def lz_complexity(data):
+    """Normalized Lempel--Ziv (LZ76) complexity, dimensionless.
+
+    Parses each row into the phrases of Lempel and Ziv's 1976 exhaustive
+    history — each phrase the shortest word not yet producible by copying
+    from what came before — using the Kaspar--Schuster scanning algorithm,
+    and normalizes the phrase count by n/log2(n), the asymptotic count for
+    an iid fair-coin string. A random row therefore reads near 1 and a
+    structured one falls below. The mean over rows is returned.
+
+    Two cautions. Unlike the block measures, the parse is sequential and
+    does not wrap: rows are read left to right. And the normalized count
+    converges to the entropy rate from above *slowly* — at n ~ 1000 a fair
+    coin still reads ~1.05 — so compare rows of equal length, not values
+    across lengths.
+
+    Parameters
+    ----------
+    data : array_like of 0s and 1s
+        A state (1d) or spacetime history (2d, time along axis 0).
+
+    Returns
+    -------
+    float
+        Mean over rows of c(n) log2(n) / n, where c(n) is the LZ76
+        phrase count.
+
+    References
+    ----------
+    A. Lempel and J. Ziv, "On the complexity of finite sequences,"
+    IEEE Trans. Inf. Theory 22, 75 (1976).
+    https://doi.org/10.1109/TIT.1976.1055501
+
+    F. Kaspar and H. G. Schuster, "Easily calculable measure for the
+    complexity of spatiotemporal patterns," Phys. Rev. A 36, 842 (1987).
+    https://doi.org/10.1103/PhysRevA.36.842
+    """
+    rows = _as_rows(data)
+    n = rows.shape[1]
+    if n < 2:
+        raise ValueError('rows must hold at least 2 cells')
+    norm = np.log2(n)/n
+    return float(np.mean([_lz76_phrases(row)*norm for row in rows]))
+
 #---------------------------------------------------------------- internals
 def _as_rows(data):
     data = np.asarray(data)
@@ -111,6 +155,37 @@ def _as_rows(data):
     if data.ndim == 2:
         return data
     raise ValueError('data must be a 1d state or 2d spacetime history')
+
+def _lz76_phrases(s):
+    """Phrase count of the LZ76 exhaustive history (Kaspar & Schuster 1987).
+
+    The scan tries to reproduce the sequence from position l onward by
+    copying from any earlier starting point i; when every i < l fails, a
+    new phrase of length k_max is closed and the scan restarts beyond it.
+    The final, possibly reproducible, tail counts as one phrase.
+    """
+    n = len(s)
+    i, k, l = 0, 1, 1
+    k_max, c = 1, 1
+    while True:
+        if s[i + k - 1] == s[l + k - 1]:
+            k += 1
+            if l + k > n:
+                c += 1
+                break
+        else:
+            if k > k_max:
+                k_max = k
+            i += 1
+            if i == l:
+                c += 1
+                l += k_max
+                if l + 1 > n:
+                    break
+                i, k, k_max = 0, 1, 1
+            else:
+                k = 1
+    return c
 
 def _block_distribution(data, k):
     rows = _as_rows(data).astype(np.int64)

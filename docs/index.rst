@@ -3,12 +3,13 @@ pyCA
 
 In the 1940s at Los Alamos, Stanislaw Ulam was growing crystal patterns on a
 lattice while John von Neumann hunted for a machine that could build a copy
-of itself; Ulam suggested the lattice, and the cellular automaton was born.
-John Conway made the subject a household game in 1970 when Martin Gardner's
-column unveiled the Game of Life, and Stephen Wolfram made it a science in
-the 1980s by numbering the 256 elementary rules and sorting their behaviors
-into classes — frozen, periodic, chaotic, and the strange fourth class that
-computes. The lesson of that lineage is the lesson of this library: a rule
+of itself\ :footcite:`vonneumann1966`; Ulam suggested the lattice, and the
+cellular automaton was born. John Conway made the subject a household game
+in 1970 when Martin Gardner's column\ :footcite:`gardner1970` unveiled the
+Game of Life, and Stephen Wolfram made it a science in the 1980s by
+numbering the 256 elementary rules\ :footcite:`wolfram1983` and sorting
+their behaviors into classes\ :footcite:`wolfram1984` — frozen, periodic,
+chaotic, and the strange fourth class that computes. The lesson of that lineage is the lesson of this library: a rule
 you can write on one line can produce a history you cannot compress at all.
 
 pyCA builds those histories and measures them. The automata span the
@@ -29,6 +30,7 @@ Guide
    :maxdepth: 1
 
    getting_started
+   applet
    guide_eca
    guide_stochastic
    guide_life
@@ -49,3 +51,8 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+References
+^^^^^^^^^^
+
+.. footbibliography::

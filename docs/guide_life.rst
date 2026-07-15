@@ -1,13 +1,15 @@
 Two-Dimensional Automata
 ========================
 
-In 1970 Martin Gardner devoted his Scientific American column to a game John
+In 1970 Martin Gardner devoted his Scientific American
+column\ :footcite:`gardner1970` to a game John
 Conway had been playing on a Go board, and the mail that followed was — by
 Gardner's own account — the largest response any column of his ever drew.
 The Game of Life needs one sentence: a dead cell with exactly three live
 neighbors is born, a live cell with two or three survives, and everything
 else dies. From that sentence come gliders, oscillators, guns, and — as
-Conway conjectured and others proved — universal computation.
+Conway conjectured\ :footcite:`gardner1971` and others
+proved\ :footcite:`berlekamp2004` — universal computation.
 
 B/S notation
 ^^^^^^^^^^^^
@@ -64,3 +66,8 @@ Run a random soup under each and compare the late-time populations. Which
 rules die, which saturate, and which hover? The measures in
 :doc:`guide_measures` apply to 2d histories row by row — quantify what your
 eyes report.
+
+References
+^^^^^^^^^^
+
+.. footbibliography::

@@ -14,7 +14,14 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
+    'sphinxcontrib.bibtex',
 ]
+
+# Citations render as footnotes at the bottom of each page (footcite /
+# footbibliography). The master copy of references.bib lives in the website
+# repo at assets/data/references.bib; the entries used here are mirrored in
+# docs/references.bib so the repo builds standalone.
+bibtex_bibfiles = ['references.bib']
 
 templates_path = []
 exclude_patterns = ['_build']

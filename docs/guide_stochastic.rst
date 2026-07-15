@@ -15,7 +15,8 @@ independently chooses (with probability `stochfrac`) whether to behave as an
 Ising spin in contact with a heat bath or as an obedient cell of the
 underlying rule. The thermal cells look at their local Ising energy —
 aligned neighbors mean low energy, frustrated neighbors mean high — and flip
-with the heat-bath probability :math:`1/(1 + e^{-2E_i/T})`. Frustrated
+with the heat-bath\ :footcite:`glauber1963` probability
+:math:`1/(1 + e^{-2E_i/T})`. Frustrated
 cells flip eagerly; aligned cells hold fast, absolutely so as
 :math:`T \to 0`. ::
 
@@ -36,7 +37,8 @@ Noisy rules
 :class:`pyCA.stochastic.NoisyECA` applies the rule everywhere, then flips
 each output bit independently with probability `noise` — the
 epsilon-perturbed automata. Small noise turns sharp class boundaries into
-genuine phase transitions: a Class II texture can survive small epsilon and
+genuine phase transitions\ :footcite:`grinstein1985`:
+a Class II texture can survive small epsilon and
 dissolve at large, with a critical point in between. ::
 
     from pyCA import NoisyECA
@@ -53,7 +55,8 @@ Asynchronous updating
 
 :class:`pyCA.stochastic.AsyncECA` never corrupts the rule — it corrupts the
 clock. Each step, each cell updates with probability `update_fraction` and
-otherwise holds its value. Synchrony is a strong assumption, and some
+otherwise holds its value. Synchrony is a strong
+assumption\ :footcite:`schonfisch1999`, and some
 celebrated CA behaviors lean on it harder than you might expect::
 
     from pyCA import AsyncECA
@@ -64,3 +67,8 @@ celebrated CA behaviors lean on it harder than you might expect::
 Run rule 110 at a few update fractions and watch what survives. The gliders
 that carry rule 110's computation are creatures of the synchronous clock;
 how gracefully they degrade is best seen with your own eyes.
+
+References
+^^^^^^^^^^
+
+.. footbibliography::

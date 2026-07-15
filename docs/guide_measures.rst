@@ -14,7 +14,8 @@ Block entropy
 ^^^^^^^^^^^^^
 
 Slide a window of length :math:`k` along each row, histogram the
-:math:`2^k` possible words, and take the Shannon entropy of the result —
+:math:`2^k` possible words, and take the Shannon
+entropy\ :footcite:`shannon1948` of the result —
 that is :math:`H_k`, the block entropy. For a frozen lattice it vanishes;
 for fair coin flips it equals :math:`k`; everything interesting lies
 between, and the *gap* below :math:`k` measures the structure the automaton
@@ -65,6 +66,33 @@ units::
     plt.ylabel('I (bits)')
     plt.show()
 
+Lempel–Ziv complexity
+^^^^^^^^^^^^^^^^^^^^^
+
+The block measures see nothing longer than :math:`k` cells.
+:func:`pyCA.measures.lz_complexity` has no such horizon: it parses each row
+into the phrases of Lempel and Ziv's 1976 exhaustive
+history\ :footcite:`lempel1976` — each phrase
+the shortest word that cannot be produced by copying from what came before
+— and counts them with the scanning algorithm of Kaspar and
+Schuster\ :footcite:`kaspar1987`. A row with structure at *any* length reuses its past and
+parses into few phrases; only genuine novelty forces new ones. The count is
+normalized by :math:`n/\log_2 n`, its asymptotic value for fair coin flips,
+so a random row reads near 1 and a frozen one near 0::
+
+    import numpy as np
+    from pyCA import ECA, measures
+
+    for rule in (0, 90, 30, 110):
+        ca = ECA(rule, N=1024, rng=np.random.default_rng(1))
+        ca.run(200)
+        print(rule, measures.lz_complexity(ca.state))
+
+Two cautions. The parse is sequential, not circular, so rows are read left
+to right. And the normalized count converges to the entropy rate from
+above slowly — at :math:`n \sim 1000` a fair coin still reads about 1.05 —
+so compare rows of equal length rather than values across lengths.
+
 A classification experiment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -75,3 +103,8 @@ plane. Class I collapses to the origin, Class III crowds the high-rate
 edge, and Class IV — the computing class — lives where the entropy rate is
 moderate but the mutual information refuses to die. There is a lot of
 unexplored territory in that plane; keep a journal of what you find in it.
+
+References
+^^^^^^^^^^
+
+.. footbibliography::

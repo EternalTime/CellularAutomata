@@ -15,6 +15,7 @@ a virtual environment::
     cd CellularAutomata
     python3 -m venv .venv
     source .venv/bin/activate
+    python -m pip install --upgrade pip
     pip install -e .
 
 The ``-e`` flag installs in editable mode — changes you make to the source

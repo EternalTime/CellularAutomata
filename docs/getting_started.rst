@@ -7,8 +7,8 @@ compute.
 Installation
 ^^^^^^^^^^^^
 
-pyCA requires Python 3.8 or newer, numpy, and matplotlib. Clone the
-repository and install it into a virtual environment::
+pyCA requires Python 3.8 or newer; pip pulls in numpy and matplotlib. Clone
+the repository and install it into a virtual environment::
 
     git clone https://github.com/EternalTime/CellularAutomata.git
     cd CellularAutomata

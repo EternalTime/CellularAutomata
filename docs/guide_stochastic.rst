@@ -12,7 +12,8 @@ The Ising cellular automaton
 :class:`pyCA.ica.ICA` makes the lattice a hybrid: each step, every cell
 independently chooses (with probability `stochfrac`) whether to behave as an
 Ising spin in contact with a heat bath or as an obedient cell of the
-underlying rule. A thermal cell reads its local Ising energy and flips with
+underlying rule. A thermal cell reads its local Ising energy - aligned
+neighbors mean low energy, frustrated neighbors mean high - and flips with
 the heat-bath\ :footcite:`glauber1963` probability
 :math:`1/(1 + e^{-2E_i/T})`. Frustration makes it flip eagerly; alignment
 makes it hold fast, absolutely so as :math:`T \to 0`. ::
@@ -23,9 +24,10 @@ makes it hold fast, absolutely so as :math:`T \to 0`. ::
     ica.run(300)
     print(ica.energy)     # mean Ising energy per site
 
-Sweep the temperature at fixed `stochfrac`, then `stochfrac` at fixed
-temperature, and watch rule 110's gliders fight the noise. At what noise
-level do they stop surviving long enough to collide? Map it out.
+Sweep the temperature at fixed `stochfrac` and watch the energy respond;
+then sweep `stochfrac` at fixed temperature and watch rule 110's gliders
+fight the noise. At what noise level do they stop surviving long enough to
+collide? Map it out.
 
 Noisy rules
 ^^^^^^^^^^^

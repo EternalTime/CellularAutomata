@@ -1,11 +1,11 @@
 # CellularAutomata
 
 pyCA is a Python library for building cellular automata and measuring the
-information their histories carry. It covers the elementary CAs (Wolfram
-rules 0–255), an Ising variant where a deterministic rule competes with a
-heat bath, noisy and asynchronous rule corruptions, and outer-totalistic 2d
-automata — Conway's Game of Life included — together with block entropy,
-entropy rate, and mutual information for the resulting spacetime diagrams.
+information their histories carry: the elementary CAs (Wolfram rules 0–255),
+an Ising variant where a deterministic rule competes with a heat bath, noisy
+and asynchronous rule corruptions, and outer-totalistic 2d automata,
+Conway's Game of Life included. Block entropy, entropy rate, and mutual
+information read the resulting spacetime diagrams.
 
 The original MATLAB classes (2016) live on in `matlab/`.
 
@@ -20,7 +20,7 @@ python -m pip install --upgrade pip
 pip install -e .
 ```
 
-Requires Python 3.8+; numpy and matplotlib are installed automatically. The
+Requires Python 3.8+; numpy and matplotlib come along. The
 [Getting Started guide](https://damiansowinski.com/pyCA/getting_started.html)
 is the authority on installation.
 
@@ -55,9 +55,8 @@ lazy = AsyncECA(30, update_fraction=0.7, N=256)
 
 ## Documentation
 
-The documentation is hosted at [damiansowinski.com/pyCA](https://damiansowinski.com/pyCA/)
-(or run `import pyCA; pyCA.docs()` to open it); the guides walk through each
-family and the information measures. To build locally:
+The docs are hosted at [damiansowinski.com/pyCA](https://damiansowinski.com/pyCA/),
+and `import pyCA; pyCA.docs()` opens them. To build locally:
 
 ```bash
 source .venv/bin/activate

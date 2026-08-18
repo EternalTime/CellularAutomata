@@ -1,11 +1,10 @@
 Thermal and Stochastic Automata
 ===============================
 
-A deterministic rule is an idealization — real systems shake. The three
-classes in this guide corrupt the elementary automata in three physically
-distinct ways, and each reduces exactly to the clean
-:class:`pyCA.eca.ECA` in the appropriate limit. The tests in the repository
-hold them to that promise.
+A deterministic rule is an idealization; real systems shake. The three
+classes here corrupt the elementary automata in physically distinct ways,
+and each reduces exactly to the clean :class:`pyCA.eca.ECA` in the
+appropriate limit. The tests hold them to it.
 
 The Ising cellular automaton
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -13,12 +12,10 @@ The Ising cellular automaton
 :class:`pyCA.ica.ICA` makes the lattice a hybrid: each step, every cell
 independently chooses (with probability `stochfrac`) whether to behave as an
 Ising spin in contact with a heat bath or as an obedient cell of the
-underlying rule. The thermal cells look at their local Ising energy —
-aligned neighbors mean low energy, frustrated neighbors mean high — and flip
-with the heat-bath\ :footcite:`glauber1963` probability
-:math:`1/(1 + e^{-2E_i/T})`. Frustrated
-cells flip eagerly; aligned cells hold fast, absolutely so as
-:math:`T \to 0`. ::
+underlying rule. A thermal cell reads its local Ising energy and flips with
+the heat-bath\ :footcite:`glauber1963` probability
+:math:`1/(1 + e^{-2E_i/T})`. Frustration makes it flip eagerly; alignment
+makes it hold fast, absolutely so as :math:`T \to 0`. ::
 
     from pyCA import ICA
 
@@ -26,20 +23,19 @@ cells flip eagerly; aligned cells hold fast, absolutely so as
     ica.run(300)
     print(ica.energy)     # mean Ising energy per site
 
-Sweep the temperature at fixed `stochfrac` and watch the energy respond;
-then sweep `stochfrac` at fixed temperature and watch rule 110's gliders
-fight the noise. At what noise level do the gliders stop surviving long
-enough to collide? That question is not rhetorical — map it out.
+Sweep the temperature at fixed `stochfrac`, then `stochfrac` at fixed
+temperature, and watch rule 110's gliders fight the noise. At what noise
+level do they stop surviving long enough to collide? Map it out.
 
 Noisy rules
 ^^^^^^^^^^^
 
 :class:`pyCA.stochastic.NoisyECA` applies the rule everywhere, then flips
-each output bit independently with probability `noise` — the
+each output bit independently with probability `noise`: the
 epsilon-perturbed automata. Small noise turns sharp class boundaries into
-genuine phase transitions\ :footcite:`grinstein1985`:
-a Class II texture can survive small epsilon and
-dissolve at large, with a critical point in between. ::
+genuine phase transitions\ :footcite:`grinstein1985`; a Class II texture can
+survive small epsilon and dissolve at large, with a critical point in
+between. ::
 
     from pyCA import NoisyECA
 
@@ -53,20 +49,19 @@ is a fair coin.
 Asynchronous updating
 ^^^^^^^^^^^^^^^^^^^^^
 
-:class:`pyCA.stochastic.AsyncECA` never corrupts the rule — it corrupts the
-clock. Each step, each cell updates with probability `update_fraction` and
+:class:`pyCA.stochastic.AsyncECA` never corrupts the rule, only the clock.
+Each step, each cell updates with probability `update_fraction` and
 otherwise holds its value. Synchrony is a strong
-assumption\ :footcite:`schonfisch1999`, and some
-celebrated CA behaviors lean on it harder than you might expect::
+assumption\ :footcite:`schonfisch1999`, and some celebrated CA behaviors
+lean on it harder than you might expect::
 
     from pyCA import AsyncECA
 
     lazy = AsyncECA(110, N=256, update_fraction=0.7)
     lazy.run(300)
 
-Run rule 110 at a few update fractions and watch what survives. The gliders
-that carry rule 110's computation are creatures of the synchronous clock;
-how gracefully they degrade is best seen with your own eyes.
+Run rule 110 at a few update fractions and watch what survives; the gliders
+that carry rule 110's computation are creatures of the synchronous clock.
 
 References
 ^^^^^^^^^^

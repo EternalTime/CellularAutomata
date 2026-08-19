@@ -35,6 +35,7 @@ test = [
 docs = [
     "sphinx",
     "sphinx-rtd-theme",
+    "sphinx-copybutton",
     "sphinxcontrib-bibtex",
     "pybtex",
 ]

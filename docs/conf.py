@@ -24,7 +24,10 @@ extensions = [
 # docs/references.bib so the repo builds standalone.
 bibtex_bibfiles = ['references.bib']
 
-# The copy button strips the doctest prompt so pasted commands run as-is.
+# The copy button strips the doctest prompts so pasted commands run as-is.
+# Both prompts must be listed: copybutton_only_copy_prompt_lines defaults to
+# True, so matching only '>>> ' would silently drop the continuation lines of
+# a multi-line doctest from the copied text.
 copybutton_prompt_text = r'>>> |\.\.\. '
 copybutton_prompt_is_regexp = True
 

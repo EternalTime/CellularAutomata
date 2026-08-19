@@ -1,10 +1,9 @@
 Two-Dimensional Automata
 ========================
 
-In 1970 Martin Gardner devoted his Scientific American
-column\ :footcite:`gardner1970` to a game John
-Conway had been playing on a Go board, and the mail that followed was — by
-Gardner's own account — the largest response any column of his ever drew.
+No column Martin Gardner ever wrote drew more mail — by his own account —
+than the one he devoted in 1970\ :footcite:`gardner1970` to a game John
+Conway had been playing on a Go board.
 The Game of Life needs one sentence: a dead cell with exactly three live
 neighbors is born, a live cell with two or three survives, and everything
 else dies. From that sentence come gliders, oscillators, guns, and — as

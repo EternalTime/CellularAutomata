@@ -15,6 +15,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinxcontrib.bibtex',
+    'sphinx_copybutton',
 ]
 
 # Citations render as footnotes at the bottom of each page (footcite /

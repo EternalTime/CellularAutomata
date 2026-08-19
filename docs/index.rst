@@ -1,10 +1,10 @@
 pyCA
 ====
 
-In the 1940s at Los Alamos, Stanislaw Ulam was growing crystal patterns on a
-lattice while John von Neumann hunted for a machine that could build a copy
-of itself\ :footcite:`vonneumann1966`; Ulam suggested the lattice, and the
-cellular automaton was born. John Conway made the subject a household game
+Stanislaw Ulam was growing crystal patterns on a lattice at Los Alamos in
+the 1940s, while John von Neumann hunted for a machine that could build a
+copy of itself\ :footcite:`vonneumann1966`; Ulam suggested the lattice, and
+the cellular automaton was born. John Conway made the subject a household game
 in 1970 when Martin Gardner's column\ :footcite:`gardner1970` unveiled the
 Game of Life, and Stephen Wolfram made it a science in the 1980s by
 numbering the 256 elementary rules\ :footcite:`wolfram1983` and sorting
@@ -45,6 +45,21 @@ Reference
 
    api/pyCA
    license
+
+Citing
+^^^^^^
+
+Sowinski DR. *pyCA* [computer software]. Version 0.1.0. 2016. Accessed July 21, 2026. https://github.com/EternalTime/CellularAutomata
+
+.. code-block:: bibtex
+
+   @software{sowinski_pyca,
+     author  = {Sowinski, Damian R.},
+     title   = {pyCA: Cellular automata simulations and information measures},
+     year    = {2016},
+     version = {0.1.0},
+     url     = {https://github.com/EternalTime/CellularAutomata}
+   }
 
 Indices and tables
 ==================

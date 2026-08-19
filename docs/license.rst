@@ -1,5 +1,8 @@
+License & Contact
+=================
+
 License
-=======
+-------
 
 The MIT License (MIT)
 
@@ -27,7 +30,25 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 
+Citing
+------
+
+If you use pyCA in your research, please cite it:
+
+Sowinski DR. *pyCA* [computer software]. Version 0.1.0. 2016. Accessed July 21, 2026. https://github.com/EternalTime/CellularAutomata
+
+.. code-block:: bibtex
+
+   @software{sowinski_pyca,
+     author  = {Sowinski, Damian R.},
+     title   = {pyCA: Cellular automata simulations and information measures},
+     year    = {2016},
+     version = {0.1.0},
+     url     = {https://github.com/EternalTime/CellularAutomata}
+   }
+
 Contact
-=======
+-------
+
 Questions? Comments? Want to collaborate?
 Contact drsowinski@gmail.com

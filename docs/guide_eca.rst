@@ -3,14 +3,13 @@ Elementary Cellular Automata
 
 An elementary cellular automaton is a row of cells, each 0 or 1, each
 updating simultaneously from its own value and its two nearest neighbors'.
-That is the entire specification — three binary inputs, one binary output —
+Three binary inputs, one binary output: that is the entire specification,
 yet the 256 possible update tables exhaust an astonishing range of behavior.
 Stephen Wolfram's numbering scheme\ :footcite:`wolfram1983` names each
-table by a single byte: bit
-:math:`n` of the rule number is the output for the neighborhood whose
-(left, center, right) values, read as a binary number, equal :math:`n`.
-Rule 90, for instance, is 01011010 in binary — work through the eight
-neighborhoods and convince yourself it computes left XOR right.
+table by a single byte: bit :math:`n` of the rule number is the output for
+the neighborhood whose (left, center, right) values, read as a binary
+number, equal :math:`n`. Rule 90 is 01011010 in binary; work through the
+eight neighborhoods and convince yourself it computes left XOR right.
 
 Driving the class
 ^^^^^^^^^^^^^^^^^
@@ -29,22 +28,22 @@ advances one step, and `play` opens a live display. The Python class adds
     ca.rule = 90              # swap the rule; the state carries over
     ca.run(300)
 
-States live on a periodic lattice — the row is a ring — so boundary effects
-never contaminate the dynamics, though patterns that outrun the lattice will
-meet themselves coming around.
+States live on a periodic lattice - a ring - so no boundary contaminates
+the dynamics, though patterns that outrun the lattice meet themselves
+coming around.
 
 The four classes
 ^^^^^^^^^^^^^^^^
 
 Wolfram's classification\ :footcite:`wolfram1984` sorts the rules by what
-they do to almost any
-initial condition. Class I rules freeze into uniformity (rule 0, rule 255).
-Class II rules settle into stripes or simple periodic textures (rule 204,
-the identity, is the laziest member). Class III rules churn out apparent
-randomness forever — rule 30 is the archetype. Class IV rules live on the
-boundary, supporting localized structures that move and collide — rule 110,
-famously, is Turing complete: Matthew Cook proved\ :footcite:`cook2004` in
-the 1990s that those colliding gliders can simulate any computation.
+they do to almost any initial condition. Class I rules freeze into
+uniformity (rule 0, rule 255). Class II rules settle into stripes or simple
+periodic textures, the identity rule 204 being the laziest member. Class III
+rules churn out apparent randomness forever, with rule 30 as the archetype.
+Class IV rules live on the boundary, supporting localized structures that
+move and collide; rule 110 is famously Turing complete, since Matthew Cook
+proved\ :footcite:`cook2004` in the 1990s that those colliding gliders can
+simulate any computation.
 
 Survey them yourself::
 
@@ -61,11 +60,9 @@ Survey them yourself::
         ax.set_axis_off()
     plt.show()
 
-Pick a handful of rules at random and classify them by eye before reading
-their known classes — the boundaries are blurrier than the taxonomy
-suggests, and deciding where a rule belongs is a better teacher than being
-told. Then come back with :doc:`guide_measures` and classify them by number
-instead.
+Classify a handful of rules by eye before you read their known classes; the
+boundaries are blurrier than the taxonomy suggests. Then come back with
+:doc:`guide_measures` and classify them by number instead.
 
 References
 ^^^^^^^^^^

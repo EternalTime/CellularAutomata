@@ -18,3 +18,9 @@ docs/_build/
 
 # MATLAB
 *.asv
+
+/CLAUDE.md
+/AGENTS.md
+/SUMMARY.md
+/TASKS.md
+/INSTRUCTIONS.md

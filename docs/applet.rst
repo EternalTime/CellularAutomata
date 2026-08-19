@@ -8,13 +8,14 @@ Applet
    <script src="_static/ca_applet.js"></script>
 
 The library, running live in your browser. The update rules are the same
-ones pyCA applies in Python - the lookup-table step of :class:`pyCA.ECA`,
-the flipped outputs of :class:`pyCA.NoisyECA`, the broken clock of
-:class:`pyCA.AsyncECA`, the heat-bath flips of :class:`pyCA.ICA`, and the
-outer-totalistic B/S counts of :class:`pyCA.CA2D` - ported line for line
-from the modules they document. Nothing is precomputed: the spacetime
-diagram scrolling past is the history of an automaton being run as you
-watch.
+ones pyCA applies in Python - the lookup-table step of
+:class:`pyCA.eca.ECA`, the flipped outputs of
+:class:`pyCA.stochastic.NoisyECA`, the broken clock of
+:class:`pyCA.stochastic.AsyncECA`, the heat-bath flips of
+:class:`pyCA.ica.ICA`, and the outer-totalistic B/S counts of
+:class:`pyCA.ca2d.CA2D` - ported line for line from the modules they
+document. Nothing is precomputed: the spacetime diagram scrolling past is
+the history of an automaton being run as you watch.
 
 The applet is yours to take apart. It ships with the library as
 `docs/_static/ca_applet.js

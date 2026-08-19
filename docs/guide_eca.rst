@@ -28,8 +28,9 @@ advances one step, and `play` opens a live display. The Python class adds
     ca.rule = 90              # swap the rule; the state carries over
     ca.run(300)
 
-States live on a ring, so no boundary contaminates the dynamics, though
-patterns that outrun the lattice meet themselves coming around.
+States live on a periodic lattice - a ring - so no boundary contaminates
+the dynamics, though patterns that outrun the lattice meet themselves
+coming around.
 
 The four classes
 ^^^^^^^^^^^^^^^^

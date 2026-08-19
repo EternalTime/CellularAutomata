@@ -4,8 +4,9 @@ pyCA is a Python library for building cellular automata and measuring the
 information their histories carry: the elementary CAs (Wolfram rules 0–255),
 an Ising variant where a deterministic rule competes with a heat bath, noisy
 and asynchronous rule corruptions, and outer-totalistic 2d automata,
-Conway's Game of Life included. Block entropy, entropy rate, and mutual
-information read the resulting spacetime diagrams.
+Conway's Game of Life included. Block entropy, entropy rate, mutual
+information, and Lempel-Ziv complexity read the resulting spacetime
+diagrams.
 
 The original MATLAB classes (2016) live on in `matlab/`.
 

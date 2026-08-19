@@ -23,6 +23,10 @@ extensions = [
 # docs/references.bib so the repo builds standalone.
 bibtex_bibfiles = ['references.bib']
 
+# The copy button strips the doctest prompt so pasted commands run as-is.
+copybutton_prompt_text = r'>>> '
+copybutton_prompt_is_regexp = True
+
 # Bibliography style: the entry's url is carried by its title as a link
 # instead of being printed as a bare URL after the entry.
 import pybtex.plugin

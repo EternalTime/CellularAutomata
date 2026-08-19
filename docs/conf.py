@@ -24,11 +24,11 @@ extensions = [
 # docs/references.bib so the repo builds standalone.
 bibtex_bibfiles = ['references.bib']
 
-# The copy button strips the doctest prompt so pasted commands run as-is.
-# sphinx_copybutton is not in `extensions` above, so these two settings are
-# inert for now; that is deliberate, and they take effect unchanged once the
-# extension is enabled.
-copybutton_prompt_text = r'>>> '
+# The copy button strips the doctest prompts so pasted commands run as-is.
+# Both prompts must be listed: copybutton_only_copy_prompt_lines defaults to
+# True, so matching only '>>> ' would silently drop the continuation lines of
+# a multi-line doctest from the copied text.
+copybutton_prompt_text = r'>>> |\.\.\. '
 copybutton_prompt_is_regexp = True
 
 # Bibliography style: the entry's url is carried by its title as a link

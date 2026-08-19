@@ -16,8 +16,9 @@ pyCA builds those histories and measures them. The automata span the
 deterministic elementary rules, an Ising variant where a rule competes with
 a heat bath, noisy and asynchronous corruptions of the synchronous clock,
 and outer-totalistic two-dimensional rules with Life as the standard-bearer.
-The measures — block entropy, entropy rate, mutual information — quantify
-how much information a spacetime diagram carries, and where it lives.
+The measures - block entropy, entropy rate, mutual information, Lempel-Ziv
+complexity - quantify how much information a spacetime diagram carries, and
+where it lives.
 
 If you're new here, start with :doc:`getting_started`, then work through
 whichever guide matches your problem. The original 2016 MATLAB classes are

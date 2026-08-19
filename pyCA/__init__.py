@@ -15,7 +15,8 @@ stochastic
 ca2d
     Outer-totalistic 2d automata, Conway's Game of Life included.
 measures
-    Block entropy, entropy rate, and mutual information for CA histories.
+    Block entropy, entropy rate, mutual information, and Lempel-Ziv
+    complexity for CA histories.
 """
 def docs():
     """Open the online pyCA documentation in a web browser."""

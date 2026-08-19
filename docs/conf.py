@@ -24,6 +24,9 @@ extensions = [
 bibtex_bibfiles = ['references.bib']
 
 # The copy button strips the doctest prompt so pasted commands run as-is.
+# sphinx_copybutton is not in `extensions` above, so these two settings are
+# inert for now; that is deliberate, and they take effect unchanged once the
+# extension is enabled.
 copybutton_prompt_text = r'>>> '
 copybutton_prompt_is_regexp = True
 

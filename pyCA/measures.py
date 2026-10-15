@@ -102,7 +102,7 @@ def mutual_information(data, distance=1):
     return float(max(info, 0.0))
 
 def lz_complexity(data):
-    """Normalized Lempel--Ziv (LZ76) complexity, dimensionless.
+    """Normalized Lempel-Ziv (LZ76) complexity, dimensionless.
 
     Parses each row into the phrases of Lempel and Ziv's 1976 exhaustive
     history — each phrase the shortest word not yet producible by copying

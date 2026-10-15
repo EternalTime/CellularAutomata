@@ -64,7 +64,7 @@ units::
     plt.ylabel('I (bits)')
     plt.show()
 
-Lempel–Ziv complexity
+Lempel-Ziv complexity
 ^^^^^^^^^^^^^^^^^^^^^
 
 The block measures see nothing longer than :math:`k` cells.

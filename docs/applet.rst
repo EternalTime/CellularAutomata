@@ -24,7 +24,7 @@ plain JavaScript with no build step and no dependencies, of which the first
 half is the library itself - the rules and the measures, function for
 function - and the rest is scenery.
 
-The square panel plots the normalized Lempel--Ziv
+The square panel plots the normalized Lempel-Ziv
 complexity\ :footcite:`lempel1976` of
 :func:`pyCA.measures.lz_complexity` against
 :func:`pyCA.measures.entropy_rate` with :math:`k = 2`, computed on the

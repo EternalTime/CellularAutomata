@@ -2,7 +2,7 @@
 
 Two ways of corrupting a deterministic rule with noise. :class:`NoisyECA`
 applies the rule everywhere and then flips each output bit independently
-with probability `noise` — the epsilon-perturbed CAs whose phase transitions
+with probability `noise` - the epsilon-perturbed CAs whose phase transitions
 have been studied since Wolfram's classification. :class:`AsyncECA` keeps
 the rule exact but breaks the synchronous clock: each step, only a random
 fraction of the cells update, the rest holding their values. Both reduce to
@@ -60,7 +60,7 @@ class AsyncECA(ECA):
     Each step, every cell independently chooses (with probability
     `update_fraction`) whether to apply the rule to its current
     neighborhood; cells that decline keep their value. The rule itself is
-    never corrupted — only the synchronous clock is.
+    never corrupted - only the synchronous clock is.
 
     Parameters
     ----------

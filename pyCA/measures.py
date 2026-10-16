@@ -42,7 +42,7 @@ def entropy_rate(data, k=2):
     The block entropies H_k grow at most linearly in k; their increments
     converge (from above) to the entropy rate, the number of new bits each
     additional cell carries once its neighbors to one side are known. Larger
-    `k` tightens the estimate but needs exponentially more data — keep
+    `k` tightens the estimate but needs exponentially more data - keep
     2**k well below the number of samples.
 
     Parameters
@@ -105,16 +105,16 @@ def lz_complexity(data):
     """Normalized Lempel-Ziv (LZ76) complexity, dimensionless.
 
     Parses each row into the phrases of Lempel and Ziv's 1976 exhaustive
-    history — each phrase the shortest word not yet producible by copying
-    from what came before — using the Kaspar--Schuster scanning algorithm,
+    history - each phrase the shortest word not yet producible by copying
+    from what came before - using the Kaspar--Schuster scanning algorithm,
     and normalizes the phrase count by n/log2(n), the asymptotic count for
     an iid fair-coin string. A random row therefore reads near 1 and a
     structured one falls below. The mean over rows is returned.
 
     Two cautions. Unlike the block measures, the parse is sequential and
     does not wrap: rows are read left to right. And the normalized count
-    converges to the entropy rate from above *slowly* — at n ~ 1000 a fair
-    coin still reads ~1.05 — so compare rows of equal length, not values
+    converges to the entropy rate from above *slowly* - at n ~ 1000 a fair
+    coin still reads ~1.05 - so compare rows of equal length, not values
     across lengths.
 
     Parameters

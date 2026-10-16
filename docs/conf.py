@@ -16,6 +16,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinxcontrib.bibtex',
     'sphinx_copybutton',
+    'myst_nb',
 ]
 
 # Citations render as footnotes at the bottom of each page (footcite /
@@ -30,6 +31,29 @@ bibtex_bibfiles = ['references.bib']
 # a multi-line doctest from the copied text.
 copybutton_prompt_text = r'>>> |\.\.\. '
 copybutton_prompt_is_regexp = True
+# Copy buttons go on code, not on the outputs of notebook cells.
+copybutton_selector = 'div:not(.output) > div.highlight pre'
+
+# Pages written as Jupyter notebooks (docs/*.ipynb) are run from top to
+# bottom on every build, so the outputs a reader sees always come from the
+# code beside them and the repository stores the notebooks without outputs.
+# A cell that raises fails the build.
+nb_execution_mode = 'force'
+nb_execution_raise_on_error = True
+nb_execution_timeout = 900
+
+# Notebook text writes math as $...$ and $$...$$, which Jupyter and Colab
+# render too, where the {math} role would show up as raw markup.
+myst_enable_extensions = ['dollarmath']
+
+# Every notebook page gets buttons that open it, runnable, on Binder and on
+# Google Colab (see docs/_templates/page.html).  Both services read the
+# notebook from this public repository and branch.
+html_context = {
+    'launch_repo': 'EternalTime/CellularAutomata',
+    'launch_branch': 'master',
+    'launch_path': 'docs',
+}
 
 # Bibliography style: the entry's url is carried by its title as a link
 # instead of being printed as a bare URL after the entry.
@@ -69,8 +93,12 @@ pybtex.plugin.register_plugin(
 )
 bibtex_default_style = 'linkedtitle'
 
-templates_path = []
-exclude_patterns = ['_build']
+templates_path = ['_templates']
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.ipynb': 'myst-nb',
+}
+exclude_patterns = ['_build', '**.ipynb_checkpoints']
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']

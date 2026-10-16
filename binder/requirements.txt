@@ -1,0 +1,3 @@
+# Binder builds its image from this file: install pyCA itself from the
+# repository checkout so the notebooks in docs/ can import it.
+.

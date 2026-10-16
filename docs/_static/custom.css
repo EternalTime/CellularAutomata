@@ -17,3 +17,46 @@
 .wy-menu-vertical p.caption {
     color: #FDB515;
 }
+
+/* Launch buttons on pages built from Jupyter notebooks
+   (docs/_templates/page.html). */
+
+.launch-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.launch-buttons a.launch-button {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid #3B7EA1;
+    border-radius: 4px;
+    color: #3B7EA1;
+    font-size: 90%;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.launch-buttons a.launch-button:hover,
+.launch-buttons a.launch-button:focus {
+    background: #3B7EA1;
+    color: #fff;
+}
+
+/* A notebook cell's output sits on a neutral background, so it reads as the
+   result of the code cell above it rather than as more code. */
+div.cell_output div.output div.highlight {
+    background: #f6f6f6;
+}
+
+/* Notebook text links to the API as [`name`](#name), which Jupyter and Colab
+   can render too.  myst wraps the code in span.xref rather than giving the
+   code itself the "xref" class that the {py:...} roles add, so repeat the
+   theme's xref rule here and both kinds of link read the same. */
+.rst-content span.xref code.literal {
+    font-weight: 700;
+    color: #404040;
+    overflow-wrap: normal;
+}

@@ -65,6 +65,8 @@ pip install -e ".[docs]"
 make -C docs html
 ```
 
+The guides in `docs/` are Jupyter notebooks, and the build runs every one of them so that the outputs on the page come from the current code.
+
 ## Tests
 
 ```bash

@@ -1,0 +1,14 @@
+{#- A page built from a Jupyter notebook opens with buttons that launch that
+    notebook, runnable, on Binder or Google Colab.  The repository, branch
+    and folder come from html_context in conf.py. #}
+{%- extends "!page.html" %}
+{%- block body %}
+{%- if page_source_suffix == '.ipynb' %}
+{%- set notebook = launch_path ~ '/' ~ pagename ~ '.ipynb' %}
+<div class="launch-buttons">
+  <a class="launch-button" href="https://mybinder.org/v2/gh/{{ launch_repo }}/{{ launch_branch }}?labpath={{ notebook|urlencode }}">Launch in Binder</a>
+  <a class="launch-button" href="https://colab.research.google.com/github/{{ launch_repo }}/blob/{{ launch_branch }}/{{ notebook }}">Open in Colab</a>
+</div>
+{%- endif %}
+{{ super() }}
+{%- endblock %}

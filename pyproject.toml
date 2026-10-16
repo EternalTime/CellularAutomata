@@ -38,6 +38,7 @@ docs = [
     "sphinx-copybutton",
     "sphinxcontrib-bibtex",
     "pybtex",
+    "myst-nb",
 ]
 
 [project.urls]

@@ -19,7 +19,7 @@ the history of an automaton being run as you watch.
 
 The applet is yours to take apart. It ships with the library as
 `docs/_static/ca_applet.js
-<https://github.com/EternalTime/CellularAutomata/blob/main/docs/_static/ca_applet.js>`_:
+<https://github.com/EternalTime/CellularAutomata/blob/master/docs/_static/ca_applet.js>`_:
 plain JavaScript with no build step and no dependencies, of which the first
 half is the library itself - the rules and the measures, function for
 function - and the rest is scenery.

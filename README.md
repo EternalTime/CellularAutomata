@@ -57,15 +57,7 @@ lazy = AsyncECA(30, update_fraction=0.7, N=256)
 ## Documentation
 
 The docs are hosted at [damiansowinski.com/pyCA](https://damiansowinski.com/pyCA/),
-and `import pyCA; pyCA.docs()` opens them. To build locally:
-
-```bash
-source .venv/bin/activate
-pip install -e ".[docs]"
-make -C docs html
-```
-
-The guides in `docs/` are Jupyter notebooks, and the build runs every one of them so that the outputs on the page come from the current code.
+and `import pyCA; pyCA.docs()` opens them.
 
 ## Tests
 

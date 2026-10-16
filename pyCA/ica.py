@@ -2,7 +2,7 @@
 
 An Ising cellular automaton (ICA) couples two dynamics on the same periodic
 lattice. A fraction of the cells, drawn fresh at random each step, evolve
-stochastically as Ising spins in contact with a heat bath — a cell flips
+stochastically as Ising spins in contact with a heat bath - a cell flips
 with the heat-bath probability determined by its local Ising energy and the
 temperature. The remaining cells evolve deterministically by an elementary
 cellular automaton rule. With stochfrac = 0 the ICA reduces exactly to the

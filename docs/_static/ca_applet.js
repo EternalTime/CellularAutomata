@@ -1,4 +1,4 @@
-/* Cellular automata — interactive applet for the pyCA documentation.
+/* Cellular automata - interactive applet for the pyCA documentation.
  *
  * The dynamics are a direct port of the library: applyRule mirrors
  * ECA._apply_rule, the noisy and asynchronous variants mirror
@@ -18,8 +18,8 @@
     let GR = 128, GC = 128;         // 2d lattice shape; GC refit to the frame at seed time
     const TRACE = 900;              // meter history length
 
-    const NAVY = [7, 34, 63];       // #07223f — dead cells, stage
-    const GOLD = [253, 181, 21];    // #FDB515 — live cells
+    const NAVY = [7, 34, 63];       // #07223f - dead cells, stage
+    const GOLD = [253, 181, 21];    // #FDB515 - live cells
 
     /* ── ECA core (ports eca.ECA) ───────────────────────────────────────── */
 
@@ -247,7 +247,7 @@
     }
 
     /* The meters watch the current state: the single row for the 1d
-     * automata, all rows of the grid pooled for the 2d one — the same
+     * automata, all rows of the grid pooled for the 2d one - the same
      * pooling measures._as_rows applies to 2d input. */
     function measure() {
         let rows, width;
@@ -308,8 +308,8 @@
     }
 
     /* Phase plot: C_LZ against h_2, equal axes on [0, 1]. Both estimate
-     * the entropy rate — h_2 sees only pair correlations, C_LZ regularity
-     * at every length — so the diagonal C_LZ = h_2 is the reference: a
+     * the entropy rate - h_2 sees only pair correlations, C_LZ regularity
+     * at every length - so the diagonal C_LZ = h_2 is the reference: a
      * history sags below it when it carries structure longer than two
      * cells that only the parse can see. (Finite-size bias pushes C_LZ up;
      * a fair coin at these widths sits somewhat above 1, clamped here.) */
@@ -365,11 +365,11 @@
       <div id="ca-head">
         <span class="ca-title">pyCA</span>
         <select id="ca-kind">
-          <option value="eca">ECA — elementary</option>
-          <option value="noisy">NoisyECA — flipped outputs</option>
-          <option value="async">AsyncECA — broken clock</option>
-          <option value="ica">ICA — rule vs. heat bath</option>
-          <option value="ca2d">CA2D — outer-totalistic 2d</option>
+          <option value="eca">ECA - elementary</option>
+          <option value="noisy">NoisyECA - flipped outputs</option>
+          <option value="async">AsyncECA - broken clock</option>
+          <option value="ica">ICA - rule vs. heat bath</option>
+          <option value="ca2d">CA2D - outer-totalistic 2d</option>
         </select>
         <button class="ca-hbtn" id="ca-reset">Reset</button>
         <button class="ca-hbtn" id="ca-pause">Pause</button>

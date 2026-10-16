@@ -1,7 +1,7 @@
 """pyCA: cellular automata and their information content.
 
-A small library for building cellular automata — deterministic, thermal,
-noisy, asynchronous, one- and two-dimensional — and measuring the
+A small library for building cellular automata - deterministic, thermal,
+noisy, asynchronous, one- and two-dimensional - and measuring the
 information their histories carry.
 
 Modules

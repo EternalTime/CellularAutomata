@@ -4,7 +4,7 @@ An outer-totalistic rule updates each cell from its own value and the *sum*
 of its eight (Moore) neighbors, nothing more. The family is conventionally
 named in B/S notation: B lists the neighbor counts at which a dead cell is
 born, S the counts at which a live cell survives. Conway's Game of Life is
-B3/S23 — born with exactly three neighbors, surviving with two or three —
+B3/S23 - born with exactly three neighbors, surviving with two or three -
 and remains the canonical inhabitant of the family.
 """
 

@@ -30,6 +30,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      # The manual's figures typeset their text with LaTeX when it is found.
+      - name: Install LaTeX
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends texlive-latex-extra cm-super dvipng
       - name: Install
         run: |
           python -m pip install --upgrade pip

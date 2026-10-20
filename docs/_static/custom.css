@@ -60,3 +60,47 @@ div.cell_output div.output div.highlight {
     color: #404040;
     overflow-wrap: normal;
 }
+
+/* "The Universe is Mathemagical" button at the foot of the sidebar
+   (docs/_templates/layout.html).  It sits at the bottom of the panel, or
+   below the navigation once that fills the panel.  The sidebar scrolls in a
+   box 20px wider than the panel to hide its scrollbar, so the button's row
+   takes the panel's 300px like the menu above it; the phone menu sets both
+   back to the panel's own width. */
+.wy-side-scroll {
+    display: flex;
+    flex-direction: column;
+}
+
+.mathemagical-foot {
+    width: 300px;
+    box-sizing: border-box;
+    margin-top: auto;
+    padding: 1.618em 0.809em 0;
+}
+
+@media screen and (max-width: 768px) {
+    .mathemagical-foot {
+        width: auto;
+    }
+}
+
+a.mathemagical,
+a.mathemagical:visited {
+    display: block;
+    padding: 0.809em 1em;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 90%;
+    font-weight: bold;
+    line-height: 1.4;
+    text-align: center;
+}
+
+a.mathemagical:hover,
+a.mathemagical:focus {
+    background: rgba(255, 255, 255, 0.22);
+    color: #fff;
+}

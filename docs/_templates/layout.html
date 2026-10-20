@@ -4,3 +4,11 @@
 {%- block htmltitle %}
   <title>{{ title|striptags|e }}{% if not embedded and docstitle %} - {{ docstitle|e }}{% endif %}</title>
 {%- endblock -%}
+{#- A button at the foot of the left panel, under the navigation, linking
+    back to the main site. #}
+{%- block navigation %}
+  {{ super() }}
+  <div class="mathemagical-foot">
+    <a class="mathemagical" href="https://damiansowinski.com/">The Universe is Mathemagical</a>
+  </div>
+{%- endblock %}
